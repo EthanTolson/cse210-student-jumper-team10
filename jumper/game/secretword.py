@@ -5,7 +5,7 @@ class Secretword:
 
 
         self.s_word = ""
-        with open("game/wordss.txt", "r") as file:
+        with open("jumper/game/wordss.txt", "r") as file:
             words = file.readlines()
             self.s_word = words[random.randint(0,9509)]
         self.s_word = self.s_word.strip()
