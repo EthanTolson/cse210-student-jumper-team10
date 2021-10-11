@@ -15,7 +15,7 @@ class Director:
         player (Player): An instance of the class of objects known as Player.
         s_word (Secretword): An instance of the class of objects known as Secretword.
     """
-
+    
     def __init__(self):
         """The class constructor.
         
@@ -26,7 +26,6 @@ class Director:
         self.player = Player()
         self.keep_playing = True
         self.s_word = SW()
-        pass
 
     def start_game(self):
         """Starts the game loop to control the sequence of play.
