@@ -10,7 +10,6 @@ class Player:
 
     Attributes:
         i_guesses_made (list): list of letters; updates as user inputs incorrect values
-        guesses_made (list): list of characters; updates as user inputs correct answers
         guesses_left (integer): number of guesses until player fails
     
     
