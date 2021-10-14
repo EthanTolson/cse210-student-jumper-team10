@@ -120,8 +120,9 @@ class Player:
             self (Player): An instance of Player.
             valid_play (boolean): passes true if player has guessed a correct value
         """
-        turns = f"You have {self.guesses_left} guesses remaining"
         if(not valid_play):
             self.guesses_left = self.guesses_left - 1
+        turns = f"You have {self.guesses_left} guesses remaining"
+        
 
         return turns
