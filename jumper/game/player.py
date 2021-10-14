@@ -92,8 +92,8 @@ class Player:
                 return False
 
         #check correct guesses
-        for i in range(len(s_word_revealed)):
-            if s_word_revealed[i] == self.guess:
+        for i in range(len(s_word)):
+            if s_word[i] == self.guess:
                 return False
         
        
