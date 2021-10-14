@@ -34,9 +34,9 @@ class Director:
             self (Director): an instance of Director.
         """
         while self.keep_playing:
-            self.get_inputs(self)
-            self.do_outputs(self)
-            self.do_updates(self)
+            self.get_inputs()
+            self.do_outputs()
+            self.do_updates()
 
     def get_inputs(self):
         """Gets the inputs at the beginning of each round of play. In this case,
