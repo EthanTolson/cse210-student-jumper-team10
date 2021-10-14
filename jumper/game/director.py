@@ -33,8 +33,9 @@ class Director:
         Args:
             self (Director): an instance of Director.
         """
-
-        pass
+        while self.keep_playing:
+            self.get_inputs()
+            self.do_outputs()
 
     def get_inputs(self):
         """Gets the inputs at the beginning of each round of play. In this case,
@@ -49,8 +50,6 @@ class Director:
             playable = self.player.can_pick(self,self.guess,self.s_word.s_word_revealed)
             if playable:
                 valid = True
-
-        pass
 
     def do_updates(self):
         """Updates the important game information for each round of play. In 
