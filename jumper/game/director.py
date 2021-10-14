@@ -42,6 +42,7 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
+
         pass
 
     def do_updates(self):
@@ -60,4 +61,8 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
+
+        self.console.write(self.s_word.secret_word_revealer())
+        self.console.write(self.player.get_graphic())
+        self.console.write(self.player.get_turns(self.s_word.check_guess(self.player.guess)))
         pass
