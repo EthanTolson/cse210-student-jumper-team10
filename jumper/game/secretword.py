@@ -1,4 +1,5 @@
 import random
+import os
 
 class Secretword:
     """A code template for the secret word that the 
@@ -22,8 +23,9 @@ class Secretword:
 
         self.s_word = "ER"
         self.correct_guess = []
+        cwd = os.getcwd().replace("\\","/")
 
-        with open("jumper/game/wordss.txt", "r") as file:
+        with open(f"{cwd}/cse210-student-jumper-team10/jumper/game/wordss.txt", "r") as file:
             words = file.readlines()
             self.s_word = words[random.randint(0,9509)]
 
