@@ -47,7 +47,7 @@ class Director:
 
         valid = False
         while valid == False:
-            self.guess = self.console.read("Guess a letter a-z: ") 
+            self.player.guess = self.console.read("Guess a letter a-z: ") 
             if self.player.can_pick(self.s_word.s_word_revealed):
                 valid = True
 

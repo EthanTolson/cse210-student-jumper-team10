@@ -96,7 +96,7 @@ class Player:
             if s_word_revealed[i] == self.guess:
                 return False
         
-        return True
+       
         
     def get_turns(self, valid_play):
         """Gives the number of turns remaining and updates when player uses one
