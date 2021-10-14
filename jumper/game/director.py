@@ -46,7 +46,9 @@ class Director:
         valid = False
         while valid == False:
             self.guess = input("Guess a letter a-z") 
-            self.player.can_pick(self,self.guess,self.s_word.s_word_revealed)
+            playable = self.player.can_pick(self,self.guess,self.s_word.s_word_revealed)
+            if playable:
+                valid = True
 
         pass
 
