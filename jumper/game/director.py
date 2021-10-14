@@ -50,8 +50,6 @@ class Director:
             if playable:
                 valid = True
 
-        pass
-
     def do_updates(self):
         """Updates the important game information for each round of play. In 
         this case,
