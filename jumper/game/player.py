@@ -63,7 +63,7 @@ class Player:
         #return
         return full_jumper
 
-    def can_pick(self, guess, s_word):
+    def can_pick(self, guess, s_word_revealed):
         """Returns a boolean value if the player can input the desired value
         Example: User cannot input numbers/special characters or a value 
         they have already input
@@ -73,8 +73,29 @@ class Player:
             guess (character): a user inputted variable
             s_word_revealed (list): a list of characters that user has correctly guessed in word
         """
+
+        ok_char = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+        #check for speecial characters
+        for i in range(len(ok_char)):
+            if guess == ok_char[i, i+1]:
+                break
+            
+            #if the loop has reached the end of ok_char and has not found a match with guess, return False.
+            if i == len(ok_char):
+                return False
+
+        #check incorrect guesses
+        for i in range(len(self.i_guesses_made)):
+            if self.i_guesses_made[i] == guess:
+                return False
+
+        #check correct guesses
+        for i in range(len(s_word_revealed)):
+            if s_word_revealed[i] == guess:
+                return False
         
-        pass
+        return True
         
     def get_turns(self, valid_play):
         """Gives the number of turns remaining and updates when player uses one

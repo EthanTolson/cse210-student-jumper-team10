@@ -36,3 +36,4 @@ root                    (project root folder)
 ---
 * TODO: Add your names and emails here
 * Ethan Tolson - tol18009@byui.edu
+* Stephen Nielsen - snielsen256@byui.edu
