@@ -30,12 +30,12 @@ class Secretword:
         self.s_word = self.s_word.strip()
         if(self.s_word == "ER"):
             print("There is an issue with the program. Program should still run properly. ERROR with file.")
-        print(f"Secret Word has been chosen! (¬‿ ¬)\n")
+        print(f"Secret Word has been chosen! (¬‿ ¬){self.s_word}\n")
         self.s_word_revealed = []
         for value in self.s_word:
             self.s_word_revealed.append("_")
         
-        pass
+        
 
     def check_guess(self, guess):
         """Returns true if guess is in secret word and updates s_word_reavealed
