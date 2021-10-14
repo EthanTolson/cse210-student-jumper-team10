@@ -82,7 +82,7 @@ class Player:
         """
 
         ok_char = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-
+        """
         #check for speecial characters
         for i in range(len(ok_char)):
             if self.guess == ok_char[i]:
@@ -102,7 +102,13 @@ class Player:
             if s_word[i] == self.guess:
                 return False
         
-        return True
+        return True"""
+        
+        if self.guess in ok_char and self.guess not in s_word and self.guess not in self.i_guesses_made:
+            return True
+        else:
+            return False
+
 
 
        
