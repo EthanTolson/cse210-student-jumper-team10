@@ -43,6 +43,11 @@ class Director:
             self (Director): An instance of Director.
         """
 
+        valid = False
+        while valid == False:
+            self.guess = input("Guess a letter a-z") 
+            self.player.can_pick(self,self.guess,self.s_word.s_word_revealed)
+
         pass
 
     def do_updates(self):
