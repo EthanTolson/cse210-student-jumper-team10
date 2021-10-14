@@ -41,7 +41,7 @@ class Director:
             
 
     def get_inputs(self):
-        """Gets the inputs at the beginning of each round of play. In this case,
+        """Gets the inputs at the beginning of each round of play. In this case, gets user character.
 
         Args:
             self (Director): An instance of Director.
@@ -55,7 +55,7 @@ class Director:
 
     def do_updates(self):
         """Updates the important game information for each round of play. In 
-        this case,
+        this case, updates whether the player can continue to play
 
         Args:
             self (Director): An instance of Director.
@@ -67,7 +67,7 @@ class Director:
 
     def do_outputs(self):
         """Outputs the important game information for each round of play. In 
-        this case,
+        this case, outputs the graphic, correctly guessed letters and nuber of turns left.
 
         Args:
             self (Director): An instance of Director.
