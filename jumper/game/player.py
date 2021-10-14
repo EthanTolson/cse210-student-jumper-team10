@@ -49,8 +49,14 @@ class Player:
         jumper = ["  ___  ", " /___\ ", " \   / ", "  \ /  ", "   0   ", "  /|\   ", "  / \  ", "       ", "^^^^^^^"]
         jumper_alt = ["       ", "       ", "       ", "       ", "   x   ", "  xxx   ", "  x x  ", "       ", "^^^^^^^"]
 
+        #determine number of incorrect guesses
+        i_guess_num = 0
+        for i in range(len(self.i_guesses_made)):
+            if self.i_guesses_made[i] != "":
+                i_guess_num += 1
+
         #determine how many lines are crossed out (-1 because jumper list starts at 0)
-        crossed_out = int(8 - self.guesses_left) - 1 
+        crossed_out = i_guess_num - 1 
 
         #concatenate full_jumper
         for i in range(len(jumper)):
