@@ -30,7 +30,7 @@ class Secretword:
         self.s_word = self.s_word.strip()
         if(self.s_word == "ER"):
             print("There is an issue with the program. Program should still run properly. ERROR with file.")
-        print(f"Secret Word has been chosen! (¬‿ ¬){self.s_word}\n")
+        print(f"Secret Word has been chosen! (¬‿ ¬)\n")
         self.s_word_revealed = []
         for value in self.s_word:
             self.s_word_revealed.append("_")
