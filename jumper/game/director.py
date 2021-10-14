@@ -34,8 +34,9 @@ class Director:
             self (Director): an instance of Director.
         """
         while self.keep_playing:
-            self.get_inputs()
-            self.do_outputs()
+            self.get_inputs(self)
+            self.do_outputs(self)
+            self.do_updates(self)
 
     def get_inputs(self):
         """Gets the inputs at the beginning of each round of play. In this case,
@@ -58,7 +59,10 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
-        pass
+        
+        if self.player.guesses_left <= 0:
+            self.keep_playing = False
+        
 
     def do_outputs(self):
         """Outputs the important game information for each round of play. In 
