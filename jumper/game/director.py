@@ -33,8 +33,9 @@ class Director:
         Args:
             self (Director): an instance of Director.
         """
-
-        pass
+        while self.keep_playing:
+            self.get_inputs()
+            self.do_outputs()
 
     def get_inputs(self):
         """Gets the inputs at the beginning of each round of play. In this case,
