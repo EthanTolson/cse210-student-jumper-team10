@@ -47,6 +47,8 @@ class Secretword:
         self.correct_guess.append(self.s_word.find(guess))
         while(self.correct_guess[-1] != -1):
            self.correct_guess.append(self.s_word.find(guess, self.correct_guess[-1]))
+        if(self.correct_guess[-1] == -1):
+            self.correct_guess.pop()
 
     def secret_word_revealer(self):
         """Returns a message with the correct guesses revealed. 
@@ -56,5 +58,5 @@ class Secretword:
         Args:
             self
         """
-        pass
-    
+        for index in self.correct_guess:
+            self.s_word_revealed[index] = self.s_word[index].capitalize()
