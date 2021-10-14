@@ -43,12 +43,20 @@ class Secretword:
             self (Secretword): an instance of Secretword
             guess (charater): user inputted guess
         """
-        self.correct_guess = []
+        for i in range(0,len(self.s_word)):
+            if guess == self.s_word[i]:
+                self.s_word_revealed[i] = self.s_word[i].upper()
+            elif i == len(self.s_word):
+                return False
+
+        return True
+
+        """self.correct_guess = []
         self.correct_guess.append(self.s_word.find(guess))
         while(self.correct_guess[-1] != -1):
            self.correct_guess.append(self.s_word.find(guess, self.correct_guess[-1]))
         if(self.correct_guess[-1] == -1):
-            self.correct_guess.pop()
+            self.correct_guess.pop()"""
 
     def secret_word_revealer(self):
         """Returns a message with the correct guesses revealed. 
