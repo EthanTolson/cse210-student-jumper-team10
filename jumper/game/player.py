@@ -51,18 +51,18 @@ class Player:
         jumper_alt = ["       ", "       ", "       ", "       ", "   x   ", "  xxx   ", "  x x  ", "       ", "^^^^^^^"]
 
         #determine number of incorrect guesses
-        i_guess_num = 0
+        """i_guess_num = 0
         for i in range(len(self.i_guesses_made)):
             if self.i_guesses_made[i] != "":
-                i_guess_num += 1
+                i_guess_num += 1"""
 
         #determine how many lines are crossed out (-1 because jumper list starts at 0)
-        crossed_out = i_guess_num - 1 
+        """crossed_out = i_guess_num - 1"""
 
         #concatenate full_jumper
         for i in range(len(jumper)):
 
-            if i <= crossed_out:
+            if i <= self.guesses_left:
                 full_jumper = f"{full_jumper}\n{jumper_alt[i]}"
             else:
                 full_jumper = f"{full_jumper}\n{jumper[i]}"
