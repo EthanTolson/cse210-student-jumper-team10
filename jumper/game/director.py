@@ -42,10 +42,13 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
+
         valid = False
         while valid == False:
             self.guess = input("Guess a letter a-z") 
             self.player.can_pick(self,self.guess,self.s_word.s_word_revealed)
+
+        pass
 
     def do_updates(self):
         """Updates the important game information for each round of play. In 
@@ -63,4 +66,8 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
+
+        self.console.write(self.s_word.secret_word_revealer())
+        self.console.write(self.player.get_graphic())
+        self.console.write(self.player.get_turns(self.s_word.check_guess(self.player.guess)))
         pass
