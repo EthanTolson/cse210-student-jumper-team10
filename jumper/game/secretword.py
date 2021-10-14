@@ -21,6 +21,7 @@ class Secretword:
         """
 
         self.s_word = "ER"
+        self.correct_guess = []
 
         with open("jumper/game/wordss.txt", "r") as file:
             words = file.readlines()
@@ -37,21 +38,25 @@ class Secretword:
         pass
 
     def check_guess(self, guess):
-        """Returns true if guess is in secret word
+        """Returns true if guess is in secret word and updates s_word_reavealed
         Args:
             self (Secretword): an instance of Secretword
             guess (charater): user inputted guess
         """
-        pass
+        self.correct_guess = []
+        self.correct_guess.append(self.s_word.find(guess))
+        while(self.correct_guess[-1] != -1):
+           self.correct_guess.append(self.s_word.find(guess, self.correct_guess[-1]))
+        if(self.correct_guess[-1] == -1):
+            self.correct_guess.pop()
 
-    def secret_word_revealer(self, guess = "!"):
+    def secret_word_revealer(self):
         """Returns a message with the correct guesses revealed. 
-        If guess is included then update self.s_word_revealed
+        
         Ex.        _ _ A _ _
         
         Args:
             self
-            guess (character): user inputted character
         """
-        pass
-    
+        for index in self.correct_guess:
+            self.s_word_revealed[index] = self.s_word[index].capitalize()

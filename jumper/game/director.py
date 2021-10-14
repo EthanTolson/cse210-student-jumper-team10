@@ -33,8 +33,10 @@ class Director:
         Args:
             self (Director): an instance of Director.
         """
-
-        pass
+        while self.keep_playing:
+            self.get_inputs(self)
+            self.do_outputs(self)
+            self.do_updates(self)
 
     def get_inputs(self):
         """Gets the inputs at the beginning of each round of play. In this case,
@@ -42,7 +44,13 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
-        pass
+
+        valid = False
+        while valid == False:
+            self.guess = input("Guess a letter a-z") 
+            playable = self.player.can_pick(self,self.guess,self.s_word.s_word_revealed)
+            if playable:
+                valid = True
 
     def do_updates(self):
         """Updates the important game information for each round of play. In 
@@ -51,7 +59,10 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
-        pass
+        
+        if self.player.guesses_left <= 0:
+            self.keep_playing = False
+        
 
     def do_outputs(self):
         """Outputs the important game information for each round of play. In 
@@ -60,4 +71,8 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
+
+        self.console.write(self.s_word.secret_word_revealer())
+        self.console.write(self.player.get_graphic())
+        self.console.write(self.player.get_turns(self.s_word.check_guess(self.player.guess)))
         pass

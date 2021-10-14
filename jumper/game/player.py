@@ -11,7 +11,7 @@ class Player:
     Attributes:
         i_guesses_made (list): list of letters; updates as user inputs incorrect values
         guesses_left (integer): number of guesses until player fails
-    
+        guess (character): player inputted guess
     
     """
     def __init__(self):
@@ -20,6 +20,7 @@ class Player:
         Args:
             self (Player): An instance of Player.
         """
+        self.guess = ""
         self.guesses_left = 8
         self.i_guesses_made = ["", "", "", "", "", "", "", ""]
         pass
@@ -63,14 +64,14 @@ class Player:
         #return
         return full_jumper
 
-    def can_pick(self, guess, s_word_revealed):
+
+    def can_pick(self, s_word):
         """Returns a boolean value if the player can input the desired value
         Example: User cannot input numbers/special characters or a value 
         they have already input
         
         Args:
             self (Player): An instance of Player.
-            guess (character): a user inputted variable
             s_word_revealed (list): a list of characters that user has correctly guessed in word
         """
 
@@ -78,7 +79,7 @@ class Player:
 
         #check for speecial characters
         for i in range(len(ok_char)):
-            if guess == ok_char[i, i+1]:
+            if self.guess == ok_char[i, i+1]:
                 break
             
             #if the loop has reached the end of ok_char and has not found a match with guess, return False.
@@ -92,7 +93,7 @@ class Player:
 
         #check correct guesses
         for i in range(len(s_word_revealed)):
-            if s_word_revealed[i] == guess:
+            if s_word_revealed[i] == self.guess:
                 return False
         
         return True
