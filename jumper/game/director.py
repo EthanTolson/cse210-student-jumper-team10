@@ -61,7 +61,7 @@ class Director:
             self (Director): An instance of Director.
         """
         
-        if self.player.guesses_left <= 0:
+        if self.player.guesses_left <= 0 or "_" not in self.s_word.s_word_revealed:
             self.keep_playing = False
         
 
