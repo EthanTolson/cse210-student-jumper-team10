@@ -58,5 +58,8 @@ class Secretword:
         Args:
             self
         """
-        for index in self.correct_guess:
-            self.s_word_revealed[index] = self.s_word[index].capitalize()
+        message = ""
+        for i in range(0, len(self.s_word_revealed)):
+            message = f"{self.s_word_revealed[i]} "
+        
+        return message
