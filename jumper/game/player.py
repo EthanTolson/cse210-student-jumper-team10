@@ -79,7 +79,7 @@ class Player:
 
         #check for speecial characters
         for i in range(len(ok_char)):
-            if self.guess == ok_char[i, i+1]:
+            if self.guess == ok_char[i]:
                 break
             
             #if the loop has reached the end of ok_char and has not found a match with guess, return False.
@@ -88,7 +88,7 @@ class Player:
 
         #check incorrect guesses
         for i in range(len(self.i_guesses_made)):
-            if self.i_guesses_made[i] == guess:
+            if self.i_guesses_made[i] == self.guess:
                 return False
 
         #check correct guesses
