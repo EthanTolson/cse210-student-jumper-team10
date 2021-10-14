@@ -96,6 +96,9 @@ class Player:
             if s_word[i] == self.guess:
                 return False
         
+        return True
+
+
        
         
     def get_turns(self, valid_play):
