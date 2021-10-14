@@ -63,7 +63,7 @@ class Player:
         for i in range(len(jumper)):
 
             if i >= self.guesses_left:
-                full_jumper = f"{full_jumper}\n{jumper_alt[-i]}"
+                full_jumper = f"{full_jumper}\n{jumper_alt[i]}"
             else:
                 full_jumper = f"{full_jumper}\n{jumper[i]}"
 
