@@ -46,10 +46,11 @@ class Secretword:
         for i in range(0,len(self.s_word)):
             if guess == self.s_word[i]:
                 self.s_word_revealed[i] = self.s_word[i].upper()
-            elif i == len(self.s_word):
-                return False
-
-        return True
+            
+        if guess in self.s_word:
+            return True
+        else:
+            return False
 
         """self.correct_guess = []
         self.correct_guess.append(self.s_word.find(guess))
