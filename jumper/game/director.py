@@ -42,7 +42,10 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
-        pass
+        valid = False
+        while valid == False:
+            self.guess = input("Guess a letter a-z") 
+            self.player.can_pick(self,self.guess,self.s_word.s_word_revealed)
 
     def do_updates(self):
         """Updates the important game information for each round of play. In 
