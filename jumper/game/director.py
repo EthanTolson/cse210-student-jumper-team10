@@ -34,9 +34,11 @@ class Director:
             self (Director): an instance of Director.
         """
         while self.keep_playing:
+            
             self.get_inputs()
             self.do_outputs()
             self.do_updates()
+            
 
     def get_inputs(self):
         """Gets the inputs at the beginning of each round of play. In this case,
@@ -70,8 +72,8 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
-
+        self.console.write(self.player.get_turns(self.s_word.check_guess(self.player.guess)))
         self.console.write(self.s_word.secret_word_revealer())
         self.console.write(self.player.get_graphic())
-        self.console.write(self.player.get_turns(self.s_word.check_guess(self.player.guess)))
+        
         
