@@ -63,7 +63,9 @@ class Director:
         
         if self.player.guesses_left <= 0 or "_" not in self.s_word.s_word_revealed:
             self.keep_playing = False
-        
+
+        if self.player.guess not in self.s_word.s_word_revealed:
+            self.player.i_guesses_made.append(self.player.guess)
 
     def do_outputs(self):
         """Outputs the important game information for each round of play. In 
