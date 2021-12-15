@@ -23,9 +23,9 @@ class Secretword:
 
         self.s_word = "ER"
         self.correct_guess = []
-        cwd = os.getcwd().replace("\\","/")
+        cwd = os.path.dirname(os.path.abspath(__file__))
 
-        with open(f"{cwd}/cse210-student-jumper-team10/jumper/game/wordss.txt", "r") as file:
+        with open(f"{cwd}/wordss.txt", "r") as file:
             words = file.readlines()
             self.s_word = words[random.randint(0,9509)]
 
